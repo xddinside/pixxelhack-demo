@@ -51,7 +51,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full p-6 flex justify-between items-center z-50">
       <div className="relative">
         <motion.button
-          className="relative z-10 px-2 py-0.5 rounded-lg border-yellow-900 border-2 text-black shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.1)]"
+          className="relative z-10 px-2 py-0.5 rounded-lg border-yellow-950 border-2 text-black shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.1)]"
           variants={buttonVariants}
           initial="initial"
           whileHover="hover"
