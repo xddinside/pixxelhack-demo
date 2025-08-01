@@ -5,7 +5,7 @@ const MenuItem = ({ index, text, hoveredIndex, onHoverStart, onHoverEnd, itemCou
   const isHovered = hoveredIndex === index;
   const isAnyHovered = hoveredIndex !== null;
 
-  const CONTAINER_PADDING_TOP_VH = 25;
+  const CONTAINER_PADDING_TOP_VH = 20;
   const TOTAL_CARD_SPACE_VH = 100 - CONTAINER_PADDING_TOP_VH;
   const EXPANDED_HEIGHT_VH = 35;
   const COLLAPSED_OVERLAP_VH = 14;

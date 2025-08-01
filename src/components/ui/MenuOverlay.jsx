@@ -19,14 +19,17 @@ const MenuOverlay = () => {
 
   return (
     <motion.div
-      className="fixed top-0 right-0 h-full w-full md:w-4/5 lg:w-2/3 shadow-2xl bg-[#FDFBD4]"
+      className="fixed top-2 right-2 bottom-2 left-2 md:left-auto md:w-4/5 lg:w-2/3 rounded-2xl shadow-2xl bg-[#FDFBD4] overflow-hidden"
       variants={overlayVariants}
       initial="hidden"
       animate="visible"
       exit="hidden"
       transition={{ duration: 0.2, ease: 'easeInOut' }}
     >
-      <div className="relative w-full h-full pt-[30vh]">
+      <div className='text-[#23395d] text-5xl font-semibold h-[25vh] flex flex-col justify-center items-center'>
+      <span>Timeless Designs,</span> <span>Modern Homes.</span>
+      </div>
+      <div className="relative w-full h-full">
         {menuItems.map((item, index) => (
           <MenuItem
             key={index}
