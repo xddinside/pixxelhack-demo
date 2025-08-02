@@ -14,40 +14,27 @@ const Navbar = () => {
     initial: { 
       y: 0, 
       background: 'linear-gradient(to bottom, #DBA66D, #844D11)',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)'
     },
     hover: { 
       y: -6, 
-      background: 'linear-gradient(to bottom, #EBC27E, #A55F14)' 
+      background: 'linear-gradient(to bottom, #EBC27E, #A55F14)',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3)'
     },
     tap: { 
       y: 0, 
-      background: 'linear-gradient(to bottom, #B88450, #632B00)', 
+      background: 'linear-gradient(to bottom, #B88450, #632B00)',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2)'
     }
   };
 
   const buttonTransition = {
-    hover: { duration: 0.2 },
-    initial: { 
-      type: 'spring',
-      stiffness: 400,
-      damping: 8,
-      mass: 0.5
-    },
-    tap: { 
-      type: 'spring',
-      stiffness: 400,
-      damping: 8,
-      mass: 0.5
-    }
+    hover: { duration: 0.3, ease: 'easeOut' },
+    initial: { duration: 0.2, ease: 'easeOut' },
+    tap: { duration: 0.1, ease: 'easeIn' }
   };
 
-  const shadowVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.2 } },
-    exit: { opacity: 0, scale: 0.95, transition: { duration: 0.1 } }
-  };
-
-  const buttonClassnames = "relative z-10 px-2 py-0.5 border-yellow-800 border-2 rounded-lg text-black shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.1)]"
+  const buttonClassnames = "relative z-10 px-2 py-0.5 border-yellow-800 border-2 rounded-lg text-black shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.1)]";
 
   return (
     <nav className="fixed top-0 left-0 w-full p-6 flex justify-between items-center z-50">
@@ -65,17 +52,6 @@ const Navbar = () => {
             CART
           </div>
         </motion.button>
-        <AnimatePresence>
-          <motion.div
-            key="cart-shadow"
-            className="absolute top-0 left-0 w-full h-full rounded-lg bg-og-black z-[5]"
-            variants={shadowVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            style={{ willChange: 'opacity, transform' }}
-          />
-        </AnimatePresence>
       </div>
 
       <div className="relative z-[60]">
@@ -100,17 +76,6 @@ const Navbar = () => {
             </div>
           )}
         </motion.button>
-        <AnimatePresence>
-          <motion.div
-            key="menu-shadow"
-            className="absolute top-0 left-0 w-full h-full rounded-lg bg-og-black z-[5]"
-            variants={shadowVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            style={{ willChange: 'opacity, transform' }}
-          />
-        </AnimatePresence>
       </div>
 
       <AnimatePresence>
