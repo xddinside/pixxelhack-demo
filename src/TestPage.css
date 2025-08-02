@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'RobotoVariable';
+  src: url('../assets/fonts/Roboto-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+:root{
+    --dark-color: #111621;
+    --light-color: #F1F0DB;
+    font-family: "Roboto";
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Page{
+    padding-top: 100vh;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    min-height: 150vh;
+    width: 100%;
+    padding-bottom: 100vh;
+}
+
+html{
+    scroll-snap-type: y proximity;
+}
