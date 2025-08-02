@@ -34,10 +34,10 @@ const Navbar = () => {
     tap: { duration: 0.1, ease: 'easeIn' }
   };
 
-  const buttonClassnames = "relative z-10 px-2 py-0.5 border-yellow-800 border-2 rounded-lg text-black shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.1)]";
+  const buttonClassnames = "relative z-10 px-2 py-0.5 md:px-3 md:py-1 border-yellow-800 border-2 rounded-lg text-black shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_2px_4px_rgba(0,0,0,0.1)] text-sm md:text-base";
 
   return (
-    <nav className="fixed top-0 left-0 w-full p-6 flex justify-between items-center z-50">
+    <nav className="fixed top-0 left-0 w-full p-4 sm:p-6 lg:p-8 flex justify-between items-center z-50">
       <div className="relative z-[60]">
         <motion.button
           className={buttonClassnames}
@@ -47,9 +47,9 @@ const Navbar = () => {
           whileTap="tap"
           transition={buttonTransition}
         >
-          <div className="flex items-center px-0.5 gap-x-1.5 font-semibold">
-            <ShoppingCart size={15} strokeWidth={3.5} />
-            CART
+          <div className="flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
+            <ShoppingCart size={14} className="size-5 sm:size-4" strokeWidth={3.5} />
+            <span className="hidden sm:inline">CART</span>
           </div>
         </motion.button>
       </div>
@@ -65,14 +65,14 @@ const Navbar = () => {
           transition={buttonTransition}
         >
           {isOpen ? (
-            <div className="flex items-center px-0.5 gap-x-1.5 font-semibold">
-              CLOSE
-              <X size={15} strokeWidth={3.5} />
+            <div className="flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
+              <span className="hidden sm:inline">CLOSE</span>
+              <X size={14} className="size-5 sm:size-4" strokeWidth={3.5} />
             </div>
           ) : (
-            <div className="flex items-center px-0.5 gap-x-1.5 font-semibold">
-              MENU
-              <Menu size={15} strokeWidth={3.5} />
+            <div className="flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
+              <span className="hidden sm:inline">MENU</span>
+              <Menu size={14} className="size-5 sm:size-4" strokeWidth={3.5} />
             </div>
           )}
         </motion.button>

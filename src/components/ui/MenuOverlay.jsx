@@ -27,7 +27,7 @@ const MenuOverlay = () => {
       transition={{ duration: 0.2, ease: 'easeInOut' }}
     >
       <div className='text-[#23395d] text-5xl font-semibold h-[25vh] flex flex-col justify-center items-center'>
-      <span>Timeless Designs,</span> <span>Modern Homes.</span>
+      <span className='text-center'>Timeless Designs,</span><span className='text-center'>Modern Homes.</span>
       </div>
       <div className="relative w-full h-full">
         {menuItems.map((item, index) => (
@@ -39,7 +39,7 @@ const MenuOverlay = () => {
             onHoverStart={() => setHoveredIndex(index)}
             onHoverEnd={() => setHoveredIndex(null)}
             itemCount={menuItems.length}
-          />
+          ></MenuItem>
         ))}
       </div>
     </motion.div>
