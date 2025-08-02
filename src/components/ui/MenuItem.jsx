@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const MenuItem = ({ index, text, hoveredIndex, onHoverStart, onHoverEnd, itemCount }) => {
   const isHovered = hoveredIndex === index;
   const isAnyHovered = hoveredIndex !== null;
@@ -21,7 +23,6 @@ const MenuItem = ({ index, text, hoveredIndex, onHoverStart, onHoverEnd, itemCou
   }
 
   const height = isHovered ? EXPANDED_HEIGHT_VH : collapsed_vh;
-
   const verticalShift = isHovered ? (collapsed_vh - EXPANDED_HEIGHT_VH) / 2 : 0;
 
   let y = 0;
@@ -31,14 +32,16 @@ const MenuItem = ({ index, text, hoveredIndex, onHoverStart, onHoverEnd, itemCou
     y += prevHeight - overlap_vh;
   }
 
-  const BASE_URL = import.meta.env.BASE_URL;
-  const imageFiles = ['/1.jpg', '/2.jpg', '/3.jpg', '/4.jpg'];
-  const backgroundImageUrl = imageFiles.map(image => `${BASE_URL}${image}`);
+  const imageFiles = ['1.jpg', '2.jpg', '3.jpg', '4.jpg'];
+  const images = imageFiles.map(file => `${BASE_URL}${file}`);
+
+  const backgroundImageUrl = `url(${images[index % 4]})`;
   const linkTo = `/${text.toLowerCase().split(' ')[0]}`;
 
   return (
     <Link to={linkTo}>
       <motion.div
+        // ... (the rest of your component's JSX remains the same)
         initial={{ y: `${y}vh`, height: `${height}vh` }}
         animate={{ y: `${y}vh`, height: `${height}vh` }}
         transition={{ type: 'tween', stiffness: 500, damping: 25, duration: 0.2, ease:'easeOut' }}
