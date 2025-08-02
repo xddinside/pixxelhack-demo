@@ -28,19 +28,36 @@ function App() {
     gridRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const BASE_URL = import.meta.env.BASE_URL;
+
   var Element1 = {
-    "SectionName":"Chairs & Sofa",
-    "BigImageUrlList":["/assets/images/sofa3.webp","/assets/images/sofa2.webp"],
-    "SmallImageUrlList":["/assets/images/Chair6.webp","/assets/images/sofa2.webp","/assets/images/Chair2.webp"]
-}
+    "SectionName": "Chairs & Sofa",
+    "BigImageUrlList": [
+      `${BASE_URL}assets/images/sofa3.webp`,
+      `${BASE_URL}assets/images/sofa2.webp`
+    ],
+    "SmallImageUrlList": [
+      `${BASE_URL}assets/images/Chair6.webp`,
+      `${BASE_URL}assets/images/sofa2.webp`,
+      `${BASE_URL}assets/images/Chair2.webp`
+    ]
+  };
 
-var Element2 = {
-    "SectionName":"Tables",
-    "BigImageUrlList":["/assets/images/sofa6.webp","/assets/images/sofa4.webp","/assets/images/sofa5.webp"],
-    "SmallImageUrlList":["/assets/images/Chair2.webp","/assets/images/sofa1.webp","/assets/images/Chair3.webp"]
-}
+  var Element2 = {
+    "SectionName": "Tables",
+    "BigImageUrlList": [
+      `${BASE_URL}assets/images/sofa6.webp`,
+      `${BASE_URL}assets/images/sofa4.webp`,
+      `${BASE_URL}assets/images/sofa5.webp`
+    ],
+    "SmallImageUrlList": [
+      `${BASE_URL}assets/images/Chair2.webp`,
+      `${BASE_URL}assets/images/sofa1.webp`,
+      `${BASE_URL}assets/images/Chair3.webp`
+    ]
+  };
 
-var GridElements = [Element1, Element2]
+  var GridElements = [Element1, Element2]
 
   return (
     <>

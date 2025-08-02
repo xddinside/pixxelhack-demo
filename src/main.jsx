@@ -8,7 +8,6 @@ import Works from './Works.jsx';
 import Services from './Services.jsx';
 import Contacts from './Contacts.jsx';
 
-// 👇 Use createHashRouter here
 const router = createHashRouter([
   { path: "/", element: <App /> },
   { path: "/about", element: <About /> },
