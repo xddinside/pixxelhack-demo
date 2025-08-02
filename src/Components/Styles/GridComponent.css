@@ -1,0 +1,203 @@
+.GridImageSection .ScrollSnapX{
+    width: 80%;
+    max-width: 1100px;
+}
+
+.GridElement{
+    width: 100%;
+    height: 60%;
+    padding: 50px 5px 0px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-margin: 0px;
+    padding: 30px;
+}
+
+.SectionHead{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.SectionDescription{
+    max-width: 900px;
+    width: 80%;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.GridImageSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.GridImageUpperSection{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.BigImageSection{
+    width: 50%;
+    aspect-ratio: 1/1;
+    scroll-snap-align: start;
+    overflow-x: scroll;
+    display: flex;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.BigImageSection::-webkit-scrollbar {
+    display: none;
+}
+
+.ScrollSnapX::-webkit-scrollbar {
+    display: none;            
+}
+
+.BigImage{
+    flex: 0 0 100%;
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    background-size:cover;
+    background-image: url("/assets/images/chair4.webp");
+}
+
+.SmallImageSection{
+    width: 50%;       
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.SmallImage{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+.SectionPageLinkArea{
+    padding: 5% 5% 5% 5%;
+}
+
+.SectionPageLink{
+    height: 100%;
+    width: 100%;
+    background-size: contain;
+    /* background-image: url("/assets/images/WoodTexture2.webp"); */
+    background-color: #212b3f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.SectionPageLink h3{
+    width: 80%;
+    color: var(--light-color);
+    font-weight: Bold;
+    font-size: 2em;
+    text-align: center;
+}
+
+.SectionPageLink .Link{
+    background-color: var(--light-color);
+    padding: 4% 8%;
+    border-radius: 20px;
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.SectionPageLink .Link.Link:hover{
+    cursor: pointer;
+}
+
+@media only screen and (max-width:1000px){
+    .SectionPageLink h3{
+        font-size: 1.5em;
+    }   
+}
+
+
+
+@media only screen and (max-width:800px){
+    .GridImageSection .ScrollSnapX{
+        display: block;
+        width: 100%;
+        overflow-x: scroll;
+        scroll-snap-type:x mandatory;
+    }
+    .GridElement{
+        align-items: start;
+    }
+
+    .SectionHead{
+        text-align: left;
+    }
+
+    .SectionDescription{
+        text-align: left;
+        width: fit-content;
+        font-size: 13px;
+        margin: 0px 0px 20px 0px;
+    }
+
+    .GridImageSection{
+        display: block;
+    }
+
+    .GridImageUpperSection{
+        width: 130%;
+    }
+
+    .BigImage{
+        width: 50%;
+        aspect-ratio: 1/1;
+        scroll-snap-align: start;
+    }
+    .SmallImageSection{
+        width: 50%;
+        aspect-ratio: 1/1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        scroll-snap-align: end;
+    }
+
+    .SectionPageLink h3{
+    font-size: 1.2em;
+    }
+    .SectionPageLink .Link{
+        padding: 3% 6%;
+        border-radius: 15px;
+        color: var(--dark-color);
+        font-weight: 500;
+    }
+
+
+}
+
+@media only screen and (max-width:400px){
+    .SectionPageLink h3{
+        font-size: 0.8em;
+    }
+    .SectionPageLink .Link{
+        font-size: 10px;
+        padding: 0px;
+        color: var(--light-color);
+        font-weight: 500;
+        background-color: transparent;
+        border-radius: 15px;
+    }
+}
