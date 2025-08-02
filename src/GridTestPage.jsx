@@ -1,4 +1,4 @@
-import "./TestPage.css"
+import "./GridTestPage.css"
 import GridComponent from "./Components/GridComponent"
 
 export function TestPage(){
