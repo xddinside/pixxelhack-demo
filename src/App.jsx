@@ -4,18 +4,22 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Loader from './components/Loader';
 import GridComponent from "./Components/GridComponent"
+import Footer from './components/Footer';
 
 import "./Components/Styles/GridComponent.css"
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!sessionStorage.getItem('hasLoaded'));
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
+    if (isLoading) {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        sessionStorage.setItem('hasLoaded', 'true');
+      }, 5000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const gridRef = useRef(null);
@@ -58,6 +62,7 @@ var GridElements = [Element1, Element2]
         <div ref={gridRef}>
           <GridComponent GridName={"Featured"} Description={"Step into a world of curated elegance. Our featured collection showcases handcrafted furniture that blends timeless design with unparalleled comfort, perfect for creating a home you'll love."} GridElements={GridElements}/>
         </div>
+        <Footer />
       </main>
     </>
   );

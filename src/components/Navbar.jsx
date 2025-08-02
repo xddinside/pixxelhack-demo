@@ -67,12 +67,12 @@ const Navbar = () => {
           transition={buttonTransition}
         >
           {isOpen ? (
-            <div className="flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
+            <div className="cursor-pointer flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
               <span className="hidden sm:inline">CLOSE</span>
               <X size={14} className="size-5 sm:size-4" strokeWidth={3.5} />
             </div>
           ) : (
-            <div className="flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
+            <div className="cursor-pointer flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
               <span className="hidden sm:inline">MENU</span>
               <Menu size={14} className="size-5 sm:size-4" strokeWidth={3.5} />
             </div>
