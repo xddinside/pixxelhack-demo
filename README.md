@@ -4,6 +4,11 @@
 - Element 4: Navbar
 - Element 6: Infinite Marquee
 - Element 7: Our Team Section
+- Element 3: Image grid
+
+- make the app more responsive
+- route each link in the cards
+- create a separate Button.jsx component for buttons
 
 ## git process
 
