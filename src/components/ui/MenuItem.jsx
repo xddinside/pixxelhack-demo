@@ -31,8 +31,9 @@ const MenuItem = ({ index, text, hoveredIndex, onHoverStart, onHoverEnd, itemCou
     y += prevHeight - overlap_vh;
   }
 
-  const images = ['/1.jpg', '/2.jpg', '/3.jpg', '/4.jpg'];
-  const backgroundImageUrl = `url(${images[index % 4]})`;
+  const BASE_URL = import.meta.env.BASE_URL;
+  const imageFiles = ['/1.jpg', '/2.jpg', '/3.jpg', '/4.jpg'];
+  const backgroundImageUrl = imageFiles.map(image => `${BASE_URL}${image}`);
   const linkTo = `/${text.toLowerCase().split(' ')[0]}`;
 
   return (
