@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import MenuOverlay from './ui/MenuOverlay';
 import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,10 +49,10 @@ const Navbar = () => {
           whileTap="tap"
           transition={buttonTransition}
         >
-          <div className="flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
-            <ShoppingCart size={14} className="size-5 sm:size-4" strokeWidth={3.5} />
-            <span className="hidden sm:inline">CART</span>
-          </div>
+          <Link to={'/'} className="flex items-center px-0.5 gap-x-0 sm:gap-x-1 md:gap-x-1.5 lg:gap-x-2 font-semibold justify-center">
+            <Home size={14} className="size-5 sm:size-4" strokeWidth={3.5} />
+            <span className="hidden sm:inline">HOME</span>
+          </Link>
         </motion.button>
       </div>
 
